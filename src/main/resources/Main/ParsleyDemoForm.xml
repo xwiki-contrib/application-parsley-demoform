@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ * See the NOTICE file distributed with this work for additional
+ * information regarding copyright ownership.
+ *
+ * This is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU Lesser General Public License as
+ * published by the Free Software Foundation; either version 2.1 of
+ * the License, or (at your option) any later version.
+ *
+ * This software is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this software; if not, write to the Free
+ * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+ * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
+-->
+
+<xwikidoc version="1.1">
+  <web>Main</web>
+  <name>ParsleyDemoForm</name>
+  <language/>
+  <defaultLanguage/>
+  <translation>0</translation>
+  <creator>xwiki:XWiki.Admin</creator>
+  <creationDate>1432115849000</creationDate>
+  <parent>Main.WebHome</parent>
+  <author>xwiki:XWiki.Admin</author>
+  <contentAuthor>xwiki:XWiki.Admin</contentAuthor>
+  <date>1432117170000</date>
+  <contentUpdateDate>1432117170000</contentUpdateDate>
+  <version>1.1</version>
+  <title/>
+  <comment/>
+  <minorEdit>false</minorEdit>
+  <syntaxId>xwiki/2.1</syntaxId>
+  <hidden>false</hidden>
+  <content>{{html}}&#xd;
+&lt;form class="xform" id="demo-form" data-parsley-validate>&#xd;
+  &lt;dl>&#xd;
+    &lt;dt>&#xd;
+      &lt;!-- this field is just required, it would be validated on form submit -->&#xd;
+      &lt;label for="fullname">Full Name &lt;span class="xRequired">(Required)&lt;/span> :&lt;/label>&#xd;
+    &lt;/dt>&#xd;
+    &lt;dd>&#xd;
+      &lt;input type="text" name="fullname" required />&#xd;
+    &lt;/dd>&#xd;
+    &lt;dt>&#xd;
+      &lt;!-- this required field must be an email, and validation will be run on field change -->&#xd;
+      &lt;label for="email">Email &lt;span class="xRequired">(Required)&lt;/span> :&lt;/label>&#xd;
+    &lt;/dt>&#xd;
+    &lt;dd>&#xd;
+      &lt;input type="email" name="email" data-parsley-trigger="change" required />&#xd;
+      &lt;!-- radio and checkbox inputs by default have to be wrapped in a parent elemnt (here &lt;p>) that will have success and error classes -->&#xd;
+    &lt;/dt>&#xd;
+    &lt;dd>&#xd;
+      &lt;label for="gender">Gender &lt;span class="xRequired">(Required)&lt;/span> :&lt;/label>&#xd;
+    &lt;/dd>&#xd;
+    &lt;dt>&#xd;
+      &lt;p>&#xd;
+        M: &lt;input type="radio" name="gender" id="genderM" value="M" required />&#xd;
+        F: &lt;input type="radio" name="gender" id="genderF" value="F" />&#xd;
+      &lt;/p>&#xd;
+    &lt;dt>&#xd;
+      &lt;!-- here, field is not required, it won't throw any error if no checkbox is checked. But if checked, two at least must be checked -->&#xd;
+      &lt;label for="hobbies">Hobbies &lt;span class="xRequired">(2 minimum)&lt;/span> :&lt;/label>&#xd;
+    &lt;/dt>&#xd;
+    &lt;dd>&#xd;
+      &lt;p>&#xd;
+        Skiing &lt;input type="checkbox" name="hobbies" value="ski" data-parsley-mincheck="2" />&#xd;
+        Running &lt;input type="checkbox" name="hobbies" value="run" />&#xd;
+        Eating &lt;input type="checkbox" name="hobbies" value="eat" />&#xd;
+        Sleeping &lt;input type="checkbox" name="hobbies" value="sleep" />&#xd;
+        Reading &lt;input type="checkbox" name="hobbies" value="read" />&#xd;
+        Coding &lt;input type="checkbox" name="hobbies" value="code" />&#xd;
+      &lt;p>&#xd;
+    &lt;/dd>&#xd;
+    &lt;dt>&#xd;
+      &lt;!-- regular select input. Nothing more to add. -->&#xd;
+      &lt;label for="heard">Heard us by &lt;span class="xRequired">(Required)&lt;/span> :&lt;/label>&#xd;
+    &lt;/dt>&#xd;
+    &lt;dd>&#xd;
+      &lt;select id="heard" required>&#xd;
+        &lt;option value="">Choose..&lt;/option>&#xd;
+        &lt;option value="press">Press&lt;/option>&#xd;
+        &lt;option value="net">Internet&lt;/option>&#xd;
+        &lt;option value="mouth">Word of mouth&lt;/option>&#xd;
+        &lt;option value="other">Other..&lt;/option>&#xd;
+      &lt;/select>&#xd;
+    &lt;/dd>&#xd;
+    &lt;dt>&#xd;
+      &lt;!-- this optional textarea have a length validator that would be checked on keyup after 10 first characters, with a custom message only for minlength validator -->&#xd;
+      &lt;label for="message">Message &lt;span class="xRequired">(20 chars min, 100 max)&lt;/span> :&lt;/label>&#xd;
+    &lt;/dt>&#xd;
+    &lt;dd>&#xd;
+      &lt;textarea name="message" data-parsley-trigger="keyup" data-parsley-minlength="20" data-parsley-maxlength="100" data-parsley-validation-threshold="10" data-parsley-minlength-message = "Come on! You need to enter at least a 20 caracters long comment..">&lt;/textarea>&#xd;
+    &lt;/dd>&#xd;
+  &lt;/dl>&#xd;
+  &lt;div class="buttonwrapper">&#xd;
+    &lt;input class="button" type="submit" value="Validate" />&#xd;
+  &lt;/div>&#xd;
+&lt;/form>&#xd;
+{{/html}}</content>
+</xwikidoc>
