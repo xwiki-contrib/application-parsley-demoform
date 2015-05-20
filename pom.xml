@@ -31,7 +31,7 @@
   </parent>
   <groupId>org.xwiki.contrib</groupId>
   <artifactId>application-parsley-form</artifactId>
-  <version>1.0</version>
+  <version>1.1-SNAPSHOT</version>
   <name>Parsley JS Form Demo</name>
   <packaging>xar</packaging>
   <description>Demonstrates how to integrate the ParsleyJS Form Demo application in XWiki</description>
@@ -39,7 +39,7 @@
     <connection>scm:git:git://github.com/xwiki-contrib/application-parsley-form.git</connection>
     <developerConnection>scm:git:git@github.com:xwiki-contrib/application-parsley-form.git</developerConnection>
     <url>https://github.com/xwiki-contrib/application-parsley-form</url>
-    <tag>application-parsley-form-1.0</tag>
+    <tag>HEAD</tag>
   </scm>
   <developers>
     <developer>
